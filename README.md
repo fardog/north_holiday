@@ -3,6 +3,10 @@ NORTH Holiday
 
 A quickly created site for [NORTH](http://north.com) holiday downloads.
 
+NORTH assets (such as the NORTH logo, and the background image) are **not** 
+included under the below MIT license, and are the proprietary property of NORTH,
+Inc.; they are not to be distributed.
+
 The MIT License (MIT)
 ---------------------
 
