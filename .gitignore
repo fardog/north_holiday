@@ -22,3 +22,5 @@ index.html
 
 bower_components
 www
+/config/
+/downloads/

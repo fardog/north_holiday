@@ -5658,5 +5658,43 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
-h1 {
-  color: #ff0; }
+body {
+  background-image: url("/assets/img/background.png");
+  background-size: 1024px auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  height: 1325px;
+  padding-top: 170px; }
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+    body {
+      background-image: url("/assets/img/background@2x.png");
+      background-size: 1024 auto; } }
+
+form {
+  margin-left: 25px;
+  text-align: center; }
+  form .box {
+    background-color: #c2b4a3;
+    padding-bottom: 0.25em;
+    margin-bottom: 1em; }
+    form .box h2 {
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #27465a; }
+  form #downloadCode {
+    background-color: #c2b4a3;
+    color: #27465a;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    line-height: 24px; }
+    form #downloadCode:focus {
+      border: none;
+      box-shadow: none; }
+  form button {
+    color: #27465a;
+    background-color: #c2b4a3;
+    text-transform: uppercase; }
+    form button:hover {
+      color: #fff;
+      background-color: #27465a; }

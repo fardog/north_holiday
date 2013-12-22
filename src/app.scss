@@ -1,6 +1,49 @@
 @import '../bower_components/foundation/scss/normalize.scss';
 @import '../bower_components/foundation/scss/foundation.scss';
+@import '../bower_components/retina.js/src/_retina.scss';
 
-h1 {
-	color: #ff0;
+body {
+	@include at2x('/assets/img/background', 'png', 1024);
+	background-size: 1024px auto;
+	background-position: center top;
+	background-repeat: no-repeat;
+	height: 1325px;
+	padding-top: 170px;
 }
+
+form {
+	margin-left: 25px;
+	text-align: center;
+	.box {
+		background-color: #c2b4a3;
+		h2 {
+			font-size: 18px;
+			text-transform: uppercase;
+			color: #27465a;
+		}
+		padding-bottom: 0.25em;
+		margin-bottom: 1em;
+	}
+	#downloadCode {
+		background-color: #c2b4a3;
+		color: #27465a;
+		text-align: center;
+		border: none;
+		box-shadow: none;
+		line-height: 24px;
+		&:focus {
+			border: none;
+			box-shadow: none;
+		}
+	}
+	button {
+		color: #27465a;
+		background-color: #c2b4a3;
+		text-transform: uppercase;
+		&:hover {
+			color: #fff;
+			background-color: #27465a;
+		}
+	}
+}
+

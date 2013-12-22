@@ -1,5 +1,5 @@
 {
-  "name": "project_name",
+  "name": "north_holiday",
   "version": "0.0.1",
   "authors": [
     "Nathan Wittstock <code@fardogllc.com>"
@@ -16,6 +16,9 @@
     "tests"
   ],
 	"dependencies": {
-		"foundation": "5.0.*"
+		"foundation": "5.0.*",
+		"js-md5": "1.1.*",
+		"knockout.js": "3.*",
+		"retina.js": "*"
 	}
 }

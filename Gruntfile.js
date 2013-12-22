@@ -4,7 +4,10 @@ module.exports = function (grunt) {
 	var modernizr = 'bower_components/modernizr/modernizr.js';
 	var jsFiles = [
 		'bower_components/jquery/jquery.min.js',
+		'bower_components/retina.js/src/retina.js',
+		'bower_components/knockout.js/knockout.js',
 		'bower_components/foundation/js/foundation/foundation.js',
+		'bower_components/js-md5/js/md5.js',
 		'assets/js/app.js'
 	];
 
@@ -95,6 +98,12 @@ module.exports = function (grunt) {
 		},
 		initialize: {
 			www: ['www/assets/img', 'www/assets/css', 'www/assets/js']
+		},
+		downloads: {
+			north: {
+				code_file: 'config/download_codes.json',
+				output_directory: 'downloads'
+			}
 		}
 	});
 
@@ -115,6 +124,22 @@ module.exports = function (grunt) {
 		console.log('Initializing directories for ' + this.target);
 		for (var i = 0; i < this.data.length; i++) {
 			grunt.file.mkdir(__dirname + '/' + this.data[i]);
+		}
+	});
+	grunt.registerMultiTask('downloads', 'Generated download codes', function() {
+		console.log('Creating download codes for ' + this.target);
+		var codeFileData = grunt.file.readJSON(this.data.code_file);
+
+		var crypto = require('crypto');
+		for (var i = 0; i < codeFileData.codes.length; i++) {
+			var md5sum = crypto.createHash('md5');
+			md5sum.update(codeFileData.codes[i]);
+			var download = {
+				"valid": true,
+				"download": codeFileData.download,
+				"hash": md5sum.digest('hex')
+			}
+			grunt.file.write(this.data.output_directory + '/' + download.hash + '.json', JSON.stringify(download));
 		}
 	});
 };

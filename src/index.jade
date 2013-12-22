@@ -1,30 +1,25 @@
 doctype 5
 html(lang="en")
   head
-    title PROJECT_TITLE
+    title Happy Holidays
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(name="description", content="PROJECT_DESCRIPTION")
+    meta(name="description", content="NORTH Holiday downloadables, 2013")
     meta(name="author", content="Nathan Wittstock, Far Dog LLC")
-    meta(name="keywords", content="PROJECT_KEYWORDS")
+    meta(name="keywords", content="")
     meta(name="copyright", content="Far Dog LLC, Copyright (c) 2013.")
 
     script(type="text/javascript", src=modernizr)
     each file in css
       link(rel="stylesheet", href=file)
   body
-    nav.row
-      .large-1.small-2.columns
-        | Navigation
-
-      .large-11.small-10.columns
-        h1 This is a header
-
     .row
-      .large-8.small-8.columns
-        footer
-          &copy; 2013 
-          a(href="http://fardogllc.com/", target="_blank") Far Dog LLC
+      .large-6.medium-6.small-10.large-centered.medium-centered.small-centered.columns
+        form
+          .box(data-bind="click: focusDownloadBox")
+            h2(data-bind="text: downloadFormText") Enter Download Code Here
+            input#downloadCode(type="text", name="downloadCode", data-bind="value: downloadCode")
+          button(type="submit", name="submit", data-bind="click: checkDownloadCode") Download
 
     each file in js
       script(type="text/javascript", src=file)
