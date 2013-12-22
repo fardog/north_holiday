@@ -1,13 +1,18 @@
 doctype 5
 html(lang="en")
   head
-    title Happy Holidays
+    title Happy Holidays from NORTH
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(name="description", content="NORTH Holiday downloadables, 2013")
     meta(name="author", content="Nathan Wittstock, Far Dog LLC")
     meta(name="keywords", content="")
     meta(name="copyright", content="Far Dog LLC, Copyright (c) 2013.")
+
+    // Hey thanks for looking. Did you know this code is open source? Don't judge, it was done quickly.
+    // http://github.com/fardog/north_holiday
+    // You might also find the generic static template useful; I use it to built a lot of things
+    // http://github.com/fardog/static_template
 
     script(type="text/javascript", src=modernizr)
     each file in css
@@ -20,6 +25,7 @@ html(lang="en")
             h2(data-bind="text: downloadFormText") Enter Download Code Here
             input#downloadCode(type="text", name="downloadCode", data-bind="value: downloadCode")
           button(type="submit", name="submit", data-bind="click: checkDownloadCode") Download
+    h3 &ldquo;There never was a sound that was not music.&rdquo; &mdash; Woody Guthrie
 
     each file in js
       script(type="text/javascript", src=file)

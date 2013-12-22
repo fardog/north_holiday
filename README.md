@@ -1,7 +1,7 @@
-Static Template
-===============
+NORTH Holiday
+=============
 
-A template for quickly creating static sites with Zurb Foundation.
+A quickly created site for [NORTH](http://north.com) holiday downloads.
 
 The MIT License (MIT)
 ---------------------

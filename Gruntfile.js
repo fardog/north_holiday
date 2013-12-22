@@ -92,18 +92,22 @@ module.exports = function (grunt) {
 		copy: {
 			deploy: {
 				files: [
-					{expand: true, src: ['assets/img/*'], dest: 'www/', filter: 'isFile'}
+					{expand: true, src: ['assets/img/*'], dest: 'www/', filter: 'isFile'},
+					{expand: true, src: ['downloads/*'], dest: 'www/', filter: 'isFile'}
 				]
 			}
 		},
 		initialize: {
-			www: ['www/assets/img', 'www/assets/css', 'www/assets/js']
+			www: ['www/assets/img', 'www/assets/css', 'www/assets/js', 'www/downloads']
 		},
 		downloads: {
 			north: {
 				code_file: 'config/download_codes.json',
 				output_directory: 'downloads'
 			}
+		},
+		clean: {
+			www: "www"
 		}
 	});
 
@@ -111,14 +115,18 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	grunt.registerTask('default', ['sass:dist', 'uglify:dist', 'jade:dist']);
 	grunt.registerTask('dev', ['sass:dist', 'jade:dev']);
 	grunt.registerTask('deploy', [
+		'clean:www',
+		'initialize:www',
 		'sass:deploy',
 		'uglify:deploy',
 		'jade:deploy',
-		'copy:deploy',
+		'downloads:north',
+		'copy:deploy'
 	]);
 	grunt.registerMultiTask('initialize', 'Created directory hierarchy', function() {
 		console.log('Initializing directories for ' + this.target);

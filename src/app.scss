@@ -2,6 +2,8 @@
 @import '../bower_components/foundation/scss/foundation.scss';
 @import '../bower_components/retina.js/src/_retina.scss';
 
+@import url(http://fonts.googleapis.com/css?family=Belgrano);
+
 body {
 	@include at2x('/assets/img/background', 'png', 1024);
 	background-size: 1024px auto;
@@ -9,6 +11,7 @@ body {
 	background-repeat: no-repeat;
 	height: 1325px;
 	padding-top: 170px;
+	font-family: 'Belgrano', serif;
 }
 
 form {
@@ -17,6 +20,7 @@ form {
 	.box {
 		background-color: #c2b4a3;
 		h2 {
+			font-family: 'Belgrano', serif;
 			font-size: 18px;
 			text-transform: uppercase;
 			color: #27465a;
@@ -37,6 +41,7 @@ form {
 		}
 	}
 	button {
+		font-family: 'Belgrano', serif;
 		color: #27465a;
 		background-color: #c2b4a3;
 		text-transform: uppercase;
@@ -45,5 +50,14 @@ form {
 			background-color: #27465a;
 		}
 	}
+}
+
+h3 {
+	font-family: 'Belgrano', serif;
+	margin-top: 100px;
+	text-transform: uppercase;
+	color: #f3ea18;
+	font-size: 18px;
+	text-align: center;
 }
 
