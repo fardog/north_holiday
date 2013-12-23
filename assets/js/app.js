@@ -1,8 +1,7 @@
-$(document).foundation();
 function doDownload(url) {
-	console.log(url);
 	window.location.pathname = url;
 }
+
 $(document).ready(function() {
 
 	var viewModel = function() {
@@ -33,6 +32,7 @@ $(document).ready(function() {
 	};
 
 	// get everything running
+	$(document).foundation();
 	ko.applyBindings(new viewModel());
 	$("#downloadCode").focus();
 });
