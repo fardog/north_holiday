@@ -19,11 +19,13 @@ module.exports = function (grunt) {
 		uglify: {
 			dist: {
 				files: {
+					'assets/js/modernizr.min.js': modernizr,
 					'assets/js/app.min.js': jsFiles
 				}
 			},
 			deploy: {
 				files: {
+					'www/assets/js/modernizr.min.js': modernizr,
 					'www/assets/js/app.min.js': jsFiles
 				}
 			},
@@ -55,7 +57,7 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					data: {
-						modernizr: modernizr,
+						modernizr: 'assets/js/modernizr.min.js',
 						js: ['assets/js/app.min.js'],
 						css: ['assets/css/app.css']
 					}
@@ -67,7 +69,7 @@ module.exports = function (grunt) {
 			deploy: {
 				options: {
 					data: {
-						modernizr: modernizr,
+						modernizr: 'assets/js/modernizr.min.js',
 						js: ['assets/js/app.min.js'],
 						css: ['assets/css/app.css']
 					}
